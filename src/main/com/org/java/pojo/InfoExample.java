@@ -3,6 +3,9 @@ package org.java.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Administrator
+ */
 public class InfoExample {
     protected String orderByClause;
 

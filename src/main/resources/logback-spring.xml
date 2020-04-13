@@ -6,9 +6,9 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
 -->
 <configuration scan="false" scanPeriod="60 seconds" debug="false">
     <!-- 定义日志的根目录 -->
-    <property name="LOG_HOME" value="/app/log" />
+    <property name="LOG_HOME" value="../log" />
     <!-- 定义日志文件名称 -->
-    <property name="appName" value="nasus-springboot"></property>
+    <property name="LOG_NAME" value="log"/>
     <!-- ch.qos.logback.core.ConsoleAppender 表示控制台输出 -->
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <!--
@@ -33,7 +33,7 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
     <!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 -->
     <appender name="appLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 指定日志文件的名称 -->
-        <file>D:/IDEA/log.log</file>
+        <file>${LOG_HOME}/{LOG_NAME}</file>
         <!--
         当发生滚动时，决定 RollingFileAppender 的行为，涉及文件移动和重命名
         TimeBasedRollingPolicy： 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动。
